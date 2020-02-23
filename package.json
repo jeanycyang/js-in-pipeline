@@ -1,0 +1,27 @@
+{
+  "name": "js-in-pipeline",
+  "version": "1.0.0",
+  "description": "The \"JS in Pipeline\" article series",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanycyang/js-in-pipeline.git"
+  },
+  "keywords": [
+    "devops",
+    "nodejs",
+    "testing",
+    "linter",
+    "docker",
+    "docker-compose"
+  ],
+  "author": "Jean Ya-Ching Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeanycyang/js-in-pipeline/issues"
+  },
+  "homepage": "https://github.com/jeanycyang/js-in-pipeline#readme"
+}
