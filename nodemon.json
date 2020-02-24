@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "ignore": ["node_modules", "mysql-data"],
+  "watch": [".env", "index.js", "api/**/*", "database/**/*", "middlewares/**/*", "config/**/*"],
+  "ext": "js json"
+}
