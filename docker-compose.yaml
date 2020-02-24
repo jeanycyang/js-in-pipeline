@@ -1,0 +1,11 @@
+# only for development
+version: '3'
+services:
+  server:
+    build:
+      context: ./
+    ports:
+        - "40000:3000"
+    volumes:
+        - ./:/usr/src/app
+    command: ["npm", "run", "dev"]
