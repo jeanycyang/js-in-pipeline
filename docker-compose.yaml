@@ -4,8 +4,21 @@ services:
   server:
     build:
       context: ./
+    links:
+        - db
+    depends_on:
+        - db
     ports:
         - "40000:3000"
     volumes:
         - ./:/usr/src/app
     command: ["npm", "run", "dev"]
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+        - "3306:3306"
+    volumes:
+        - ./mysql-data:/var/lib/mysql
+    env_file:
+        - ./.env
