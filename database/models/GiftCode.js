@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
   const GiftCode = sequelize.define("GiftCode", {
     id: {
-      type: DataTypes.INTEGER(11),
+      type: Sequelize.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
@@ -19,6 +19,13 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: false,
     }
+  }, {
+    indexes: [
+        {
+            unique: true,
+            fields: ['code']
+        }
+    ]
   });
   return GiftCode;
 };

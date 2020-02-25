@@ -13,6 +13,16 @@ services:
     volumes:
         - ./:/usr/src/app
     command: ["npm", "run", "dev"]
+  db_setup:
+    build:
+      context: ./
+    links:
+        - db
+    depends_on:
+        - db
+    volumes:
+      - ./:/usr/src/app
+    command: ["node", "./database/devSetup.js"]
   db:
     image: mysql:5.7
     restart: always

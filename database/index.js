@@ -10,7 +10,7 @@ const sequelize = new Sequelize(config.MYSQL_DATABASE, config.MYSQL_USER, config
 const db = {
   sequelize,
   Sequelize,
-  GiftCode,
+  GiftCode: GiftCode(sequelize, Sequelize),
 };
 
 module.exports = db;
