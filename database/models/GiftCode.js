@@ -1,3 +1,5 @@
+const { statusesArray } = require('../../constants/GiftCodeStatuses');
+
 module.exports = (sequelize, Sequelize) => {
   const GiftCode = sequelize.define("GiftCode", {
     id: {
@@ -8,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
     },
     status: {
       type: Sequelize.ENUM,
-      values: ['active', 'inactive', 'redeemed'],
+      values: statusesArray,
       allowNull: false,
     },
     code: {
