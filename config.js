@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 module.exports = {
   MYSQL_USER: process.env['MYSQL_USER'],
   MYSQL_PASSWORD: process.env['MYSQL_PASSWORD'],

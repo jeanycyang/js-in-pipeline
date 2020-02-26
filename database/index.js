@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const config = require('../config/db');
+const config = require('../config');
 const GiftCode = require('./models/GiftCode');
 
 const sequelize = new Sequelize(config.MYSQL_DATABASE, config.MYSQL_USER, config.MYSQL_PASSWORD, {
