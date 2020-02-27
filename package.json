@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ENVIRONMENT=dev jest --testRegex=tests/unit/.*.test.js$ --coverage"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "sequelize": "^5.21.5"
   },
   "devDependencies": {
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2"
   }
 }
