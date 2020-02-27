@@ -1,7 +1,7 @@
 const { statusesArray } = require('../../constants/GiftCodeStatuses');
 
 module.exports = (sequelize, Sequelize) => {
-  const GiftCode = sequelize.define("GiftCode", {
+  const GiftCode = sequelize.define('GiftCode', {
     id: {
       type: Sequelize.INTEGER(11),
       allowNull: false,
@@ -20,14 +20,14 @@ module.exports = (sequelize, Sequelize) => {
     credits: {
       type: Sequelize.INTEGER,
       allowNull: false,
-    }
+    },
   }, {
     indexes: [
-        {
-            unique: true,
-            fields: ['code']
-        }
-    ]
+      {
+        unique: true,
+        fields: ['code'],
+      },
+    ],
   });
   return GiftCode;
 };

@@ -6,6 +6,7 @@ const PORT = 3000;
 
 /* connect to db */
 const { sequelize } = require('./database');
+
 sequelize
   .authenticate()
   .then(() => {
@@ -17,15 +18,16 @@ sequelize
   });
 
 /* log requests */
-const loggerType = process.env['development'] === 'true' ? 'dev' : 'common';
+const loggerType = process.env.development === 'true' ? 'dev' : 'common';
 app.use(morgan(loggerType, {
   skip: function skip(req) {
-    return req.path.startsWith('/health') || req.path.startsWith('/version')
+    return req.path.startsWith('/health') || req.path.startsWith('/version');
   },
-}))
+}));
 
 /* all API endpoints */
 const apiRoutes = require('./api');
+
 app.use('/api', apiRoutes);
 
 app.listen(PORT, () => console.log(`Example gift code app listening on port ${PORT}!`));
