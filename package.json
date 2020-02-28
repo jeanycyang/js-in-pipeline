@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "lint": "eslint --fix .",
     "test": "ENVIRONMENT=dev jest --testRegex=tests/unit/.*.test.js$ --coverage"
   },
   "repository": {
