@@ -18,6 +18,6 @@ after_success:
   - export PATH=$PATH:$HOME/.local/bin # add AWS in PATH
   - eval $(aws ecr get-login --no-include-email --region $AWS_REGION)
   - docker build -t giftcodeserver:$TRAVIS_COMMIT .
-  - export DOCKER_REGISTRY=$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com
-  - docker tag giftcodeserver:$TRAVIS_COMMIT $DOCKER_REGISTRY/giftcodeserver:$TRAVIS_COMMIT
-  - docker push $DOCKER_REGISTRY/giftcodeserver:$TRAVIS_COMMIT
+  - export DOCKER_REGISTRY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+  - docker tag giftcodeserver:$TRAVIS_COMMIT $DOCKER_REGISTRY_URI/giftcodeserver:$TRAVIS_COMMIT
+  - docker push $DOCKER_REGISTRY_URI/giftcodeserver:$TRAVIS_COMMIT
