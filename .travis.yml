@@ -1,8 +1,17 @@
+sudo: required # required by Docker
+
 language: node_js
 node_js:
   - 10.19.0
 cache: npm
+
+services:
+  - docker
+
 script:
   - npm audit
   - npm run lint
   - npm test
+
+after_success:
+  - docker build -t giftcodeserver:$TRAVIS_COMMIT .
