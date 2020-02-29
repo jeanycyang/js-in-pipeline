@@ -14,4 +14,10 @@ script:
   - npm test
 
 after_success:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin # add AWS in PATH
+  - eval $(aws ecr get-login --no-include-email --region $AWS_REGION)
   - docker build -t giftcodeserver:$TRAVIS_COMMIT .
+  - export DOCKER_REGISTRY=$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com
+  - docker tag giftcodeserver:$TRAVIS_COMMIT $DOCKER_REGISTRY/giftcodeserver:$TRAVIS_COMMIT
+  - docker push $DOCKER_REGISTRY/giftcodeserver:$TRAVIS_COMMIT
